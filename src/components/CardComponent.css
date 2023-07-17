@@ -1,0 +1,49 @@
+.card{
+    display: inline-block;
+    padding: 10px 10px 0px 10px;
+    height: 100% !important;
+}
+.card-name{
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    /* word-break: break-word !important; */
+}
+.typography-1{
+    color: #686b78 !important;
+    font-size: 13px !important;
+    margin-top: 4px !important;
+}
+.typography-2{
+    color: #686b78 !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px !important;
+
+}
+span{
+    margin-right: 0.9rem;
+    font-size: 11px !important;
+}
+.star-rating{
+    padding: 0 5px;
+    background-color: #48C479;
+    color: #FFFFFF;
+}
+.card-btn{
+    position: relative !important;
+    opacity: 0 !important;
+    font-weight:600 !important;
+    transition: opacity .35s ease !important;
+    left: 4.5rem;
+}
+
+.card:hover{
+    border-color: #d3d5df;
+    box-shadow: 0 4px 7px 0 rgba(218,220,230,.6);
+    cursor: pointer;
+}
+
+.card:hover .card-btn{
+    opacity: 1 !important;
+}
