@@ -2,6 +2,7 @@
     display: inline-block;
     padding: 10px 10px 0px 10px;
     height: 100% !important;
+    position: relative;
 }
 .card-name{
     font-size: 17px !important;
@@ -31,11 +32,13 @@ span{
     color: #FFFFFF;
 }
 .card-btn{
-    position: relative !important;
+    position: absolute !important;
     opacity: 0 !important;
-    font-weight:600 !important;
+    font-weight:500 !important;
     transition: opacity .35s ease !important;
-    left: 4.5rem;
+    left: 5.2rem;
+    bottom: 0px;
+    margin-top: -15px !important;
 }
 
 .card:hover{

@@ -4,8 +4,11 @@ import Header from "./Header"
 import CardComponent from './CardComponent'
 import { useState, useEffect } from "react"
 import Grid from '@mui/material/Grid';
-
+import ShimmerCard from "./ShimmerCard"
+import './Body.css'
 const Body = () => {
+
+    const shimmerArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     const [cardList, setCardList] = useState([])
 
     const getData = async () => {
@@ -23,15 +26,22 @@ const Body = () => {
     }, []);
 
     return (
-        <div>
+        <div className='parent'>
             <Header />
-
-            <Grid container spacing={1}>
-            {cardList.map((cardItem)=>{
-                const card = cardItem.data
-                return <Grid item xs={6} md={3} key={card.uuid}><CardComponent cardData={card}/></Grid>
-            })}
-            </Grid>
+            {cardList.length != 0 ? (
+                <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1 }} className='container'>
+                    {cardList.map((cardItem) => {
+                        const card = cardItem.data
+                        return <Grid item xs={12} sm={6} md={3} key={card.uuid} className='item'><CardComponent cardData={card} /></Grid>
+                    })}
+                </Grid>
+            ) : (
+                <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1 }} className='container'>
+                    {shimmerArray.map((cardItem, index) => {
+                        return <Grid item xs={12} sm={6} md={3} key={index} className='item'><ShimmerCard /></Grid>
+                    })}
+                </Grid>
+            )}
         </div>
     )
 }
